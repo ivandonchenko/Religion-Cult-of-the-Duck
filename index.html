@@ -1,27 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Religion: Cult of the Duck</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Religion: Cult of the Duck</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+        color: white;
+    }
+
+    header {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .subtitle {
+        color: #bdbdbd;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 14px 28px;
+        margin: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    .download {
+        background: #ffcc00;
+        color: #000;
+    }
+
+    .download:hover {
+        background: #ffd633;
+    }
+
+    .github {
+        background: #2b2b2b;
+        color: white;
+    }
+
+    .github:hover {
+        background: #3a3a3a;
+    }
+
+    section {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    h2 {
+        border-left: 4px solid #ffcc00;
+        padding-left: 10px;
+        margin-bottom: 15px;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+
+    .card {
+        background: #151515;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 40px;
+        color: #777;
+        font-size: 14px;
+    }
+</style>
+
 </head>
-<body style="background:#111;color:white;font-family:Arial;text-align:center;">
 
+<body>
+
+<header>
     <h1>Religion: Cult of the Duck</h1>
-    <p>Religion is an atmospheric text-based game in which the player runs a strange cult centered around a mysterious rubber duck.
-At first glance, the game looks like an ironic cult simulator:
-the player recruits people, performs rituals, collects money, and evades the police.
-But it gradually becomes clear that a real conspiracy lies behind the cult:
-people vanishing,
-secret organizations,
-experiments,
-surveillance,
-anomalies,
-and something connected to the duck itself.
-The player’s main goal isn’t to “level up” the cult, but to uncover all the secrets and get to the truth, all while keeping the organization from collapsing completely.
-</p>
+    <div class="subtitle">
+        A dark strategic narrative game about belief, control and hidden truth.
+    </div>
 
-    <h2>Download</h2>
-    <a href="https://github.com/ivandonchenko/Religion-Cult-of-the-Duck/releases/tag/v0.1">Download APK</a>
+    <a class="btn download" href="https://github.com/ivandonchenko/Religion-Cult-of-the-Duck/releases/tag/v0.1" target="_blank">
+        ⬇ Download v0.1
+    </a>
+
+    <a class="btn github" href="https://github.com/ivandonchenko/Religion-Cult-of-the-Duck" target="_blank">
+        View on GitHub
+    </a>
+</header>
+
+<section>
+    <h2>About the Game</h2>
+    <p>
+        Religion: Cult of the Duck is a narrative-driven strategy game where every decision shapes your influence, 
+        belief system, and the survival of your cult. Manage resources, control followers, and uncover hidden consequences 
+        behind your choices.
+    </p>
+</section>
+
+<section>
+    <h2>Core Features</h2>
+    <div class="features">
+
+        <div class="card">
+            🧠 Deep narrative decision system
+        </div>
+
+        <div class="card">
+            📜 Branching story events with consequences
+        </div>
+
+        <div class="card">
+            ⚖️ Resource & belief balancing mechanics
+        </div>
+
+        <div class="card">
+            🏛 Cult progression system
+        </div>
+
+        <div class="card">
+            🎭 Moral ambiguity choices
+        </div>
+
+        <div class="card">
+            🔧 Built in Unity with modular event system
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>About Development</h2>
+    <p>
+        The game is built using Unity with a modular GameManager architecture and JSON-based event system.
+        New events and story branches can be added easily without rewriting core logic, allowing fast iteration and expansion.
+    </p>
+</section>
+
+<section>
+    <h2>Roadmap</h2>
+    <div class="features">
+
+        <div class="card">✔ Basic playable version (v0.1)</div>
+        <div class="card">⏳ Expanded story branches</div>
+        <div class="card">⏳ UI redesign & polish</div>
+        <div class="card">⏳ Balancing & progression tuning</div>
+        <div class="card">⏳ Android release build</div>
+        <div class="card">⏳ Steam / mobile publishing prep</div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Religion: Cult of the Duck — Indie Project
+</footer>
 
 </body>
 </html>
