@@ -1,2 +1,7 @@
 # Religion-Cult-of-the-Duck
-Narrative Game
+Religion is an atmospheric text-based game in which the player runs a strange cult centered around a mysterious rubber duck.
+At first glance, the game looks like an ironic cult simulator:
+the player recruits people, performs rituals, collects money, and evades the police.
+But it gradually becomes clear that a real conspiracy lies behind the cult: people vanishing, secret organizations, 
+experiments, surveillance, anomalies, and something connected to the duck itself.
+The player’s main goal isn’t to “level up” the cult, but to uncover all the secrets and get to the truth, all while keeping the organization from collapsing completely.
