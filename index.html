@@ -88,6 +88,63 @@
         color: #777;
         font-size: 14px;
     }
+
+    .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider-window {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    background: #111;
+}
+
+.slider-window img {
+    width: 100%;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav {
+    background: #222;
+    color: white;
+    border: none;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav:hover {
+    background: #333;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    background: #444;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #ffcc00;
+}
 </style>
 
 </head>
@@ -103,35 +160,19 @@
     <section>
     <h2>Screenshots</h2>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;">
+    <div class="slider">
 
-        <img src="screen1.png"
-            style="width:100%;border-radius:10px;border:1px solid #333;
-            transition:0.2s;"
-            onmouseover="this.style.transform='scale(1.03)'"
-            onmouseout="this.style.transform='scale(1)'">
-        <img src="screen2.png"
-            style="width:100%;border-radius:10px;border:1px solid #333;
-            transition:0.2s;"
-            onmouseover="this.style.transform='scale(1.03)'"
-            onmouseout="this.style.transform='scale(1)'"
-        <img src="screen3.png"
-            style="width:100%;border-radius:10px;border:1px solid #333;
-            transition:0.2s;"
-            onmouseover="this.style.transform='scale(1.03)'"
-            onmouseout="this.style.transform='scale(1)'">
-        <img src="screen4.png"
-            style="width:100%;border-radius:10px;border:1px solid #333;
-            transition:0.2s;"
-            onmouseover="this.style.transform='scale(1.03)'"
-            onmouseout="this.style.transform='scale(1)'">
-        <img src="screen5.png"
-            style="width:100%;border-radius:10px;border:1px solid #333;
-            transition:0.2s;"
-            onmouseover="this.style.transform='scale(1.03)'"
-            onmouseout="this.style.transform='scale(1)'">
+        <button class="nav left" onclick="prevSlide()">‹</button>
+
+        <div class="slider-window">
+            <img id="slideImage" src="screen1.png">
+        </div>
+
+        <button class="nav right" onclick="nextSlide()">›</button>
 
     </div>
+
+    <div class="dots" id="dots"></div>
 </section>
 
     <a class="btn download" href="https://github.com/ivandonchenko/Religion-Cult-of-the-Duck/releases/tag/v0.1" target="_blank">
@@ -210,4 +251,51 @@
 </footer>
 
 </body>
+<script>
+const images = [
+    "screen1.png",
+    "screen2.png",
+    "screen3.png",
+    "screen4.png"
+];
+
+let index = 0;
+
+function showSlide(i) {
+    const img = document.getElementById("slideImage");
+    img.src = images[i];
+
+    document.querySelectorAll(".dot").forEach((d, idx) => {
+        d.classList.toggle("active", idx === i);
+    });
+}
+
+function nextSlide() {
+    index = (index + 1) % images.length;
+    showSlide(index);
+}
+
+function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
+    showSlide(index);
+}
+
+// dots
+function createDots() {
+    const dotsContainer = document.getElementById("dots");
+
+    images.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        dot.onclick = () => {
+            index = i;
+            showSlide(index);
+        };
+        dotsContainer.appendChild(dot);
+    });
+}
+
+createDots();
+showSlide(0);
+</script>
 </html>
